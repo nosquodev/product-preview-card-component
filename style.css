@@ -1,0 +1,143 @@
+:root{
+    --darkcyan: hsl(158, 36%, 37%);
+    --cream: hsl(30, 38%, 92%);
+
+    --verydarkblue: hsl(212, 21%, 14%);
+    --darkblue: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+    --fraunces: 'Fraunces', serif;
+    --montserrat: 'Montserrat', sans-serif;
+}
+p{
+    cursor: default;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--cream);
+}
+
+main{
+    width: 600px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    font-size: 14px;
+
+    background-color: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.img-desktop{
+    width: 100%;
+}
+.img-middle{
+    display: none;
+}
+.img-mobile{
+    display: none;
+}
+.text{
+    font-family: var(--montserrat);
+    padding: 20px;
+    color: var(--darkblue);
+    order: 2;
+}
+.type{
+    font-size: 0.8em;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    font-weight: 200;
+}
+h1{
+    font-family: var(--fraunces);
+    font-size: 2.5em;
+    color: var(--verydarkblue);
+    cursor: default;
+}
+.description{
+    line-height: 1.6em;
+    margin: 0;
+}
+.price{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.final_price{
+    font-family: var(--fraunces);
+    font-size: 2em;
+    color: var(--darkcyan);
+}
+.orig_price{
+    padding-left: 10px;
+    text-decoration: line-through;
+}
+button{
+    background-color: var(--darkcyan);
+    color: white;
+    font-weight: 700;
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+button:hover{
+    background-color: var(--verydarkblue);
+    cursor: pointer;
+}
+button img{
+    width: 14px;
+    padding-right: 10px;
+}
+
+@media screen and (max-width: 700px){
+    main{
+        grid-template-columns: repeat(1, 1fr);
+        height: 90%;
+        width: 90%;
+    }
+    .img-desktop{
+        display: none;
+    }
+    .img-middle{
+        display: block;
+        background-image: url(./images/image-product-mobile.jpg);
+        height: 200px;
+    }
+    
+}
+
+@media screen and (max-width: 400px) {
+    main{
+        grid-template-columns: repeat(1, 1fr);
+        height: 90%;
+        width: 90%;
+    }
+    h1{
+        line-height: auto;
+        font-size: 2em;
+    }
+    .img-desktop{
+        display: none;
+    }
+    .img-middle{
+        display: none;
+    }
+    .img-mobile{
+        display:block;
+        width: 100%;
+    }
+}
